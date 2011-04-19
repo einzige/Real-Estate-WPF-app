@@ -1,0 +1,5 @@
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\EstateSystem\bin\SharedTypes.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\EstateSystem\bin\SharedTypes.pdb
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\SharedTypes\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\SharedTypes\obj\Debug\SharedTypes.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\SharedTypes\obj\Debug\SharedTypes.pdb

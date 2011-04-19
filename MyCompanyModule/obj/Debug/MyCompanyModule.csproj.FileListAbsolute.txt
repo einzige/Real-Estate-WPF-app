@@ -1,0 +1,15 @@
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\MyCompanyModule\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\MyCompanyModule\obj\Debug\MyCompanyModule.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\MyCompanyModule\obj\Debug\MyCompanyModule.pdb
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\MyCompanyModule\obj\Debug\MyCompanyModule.g.resources
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\MyCompanyModule\obj\Debug\MyCompanyModule_MarkupCompile.cache
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\MyCompanyModule\obj\Debug\MyCompanyModule_MarkupCompile.lref
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\MyCompanyModule\obj\Debug\RibbonControls.baml
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\MyCompanyModule\obj\Debug\Views\RealtorView.baml
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\MyCompanyModule\obj\Debug\Views\RealtorView.g.cs
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\MyCompanyModule\obj\Debug\Views\MyAgencyView.baml
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\MyCompanyModule\obj\Debug\Views\MyAgencyView.g.cs
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\MyCompanyModule\obj\Debug\Views\RealtorsTableView.baml
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\MyCompanyModule\obj\Debug\Views\RealtorsTableView.g.cs
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\EstateSystem\bin\MyCompanyModule.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\EstateSystem\bin\MyCompanyModule.pdb

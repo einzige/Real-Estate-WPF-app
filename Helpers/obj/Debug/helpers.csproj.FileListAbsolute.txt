@@ -1,0 +1,8 @@
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\EstateSystem\bin\EstateHelpers.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\EstateSystem\bin\EstateHelpers.pdb
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Imaging\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Imaging\obj\Debug\EstateHelpers.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Imaging\obj\Debug\EstateHelpers.pdb
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Helpers\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Helpers\obj\Debug\EstateHelpers.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Helpers\obj\Debug\EstateHelpers.pdb

@@ -1,0 +1,13 @@
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\Views\TabControlView.baml
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\Views\TabControlView.g.cs
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\ContentPanel_MarkupCompile.cache
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\ContentPanel.g.resources
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\EstateSystem\bin\ContentPanel.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\EstateSystem\bin\ContentPanel.pdb
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\ContentPanel.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\ContentPanel.pdb
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\Views\MainWindow.g.cs
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\ContentPanel_MarkupCompile.lref
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\Views\MainWindow.baml

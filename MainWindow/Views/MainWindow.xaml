@@ -1,0 +1,42 @@
+﻿<r:RibbonWindow x:Class="MainWindowNS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cal="http://www.codeplex.com/CompositeWPF"
+        xmlns:r="clr-namespace:Fluent;assembly=Fluent"
+        xmlns:cp="clr-namespace:MainWindowNS"
+                
+        Title="EstateSystem v0.0.1 alpha" mc:Ignorable="d"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                d:DesignHeight="350" d:DesignWidth="525" 
+                SizeToContent="Manual"
+                Width="800" Height="600">
+    
+    <DockPanel LastChildFill="True">
+        <StatusBar DockPanel.Dock="Bottom">Всё готово</StatusBar>
+        
+        <r:Ribbon Name="ribbon" DockPanel.Dock="Top">
+            <!--Contextual Tab Groups-->
+            <r:Ribbon.ContextualGroups>
+                <r:RibbonContextualTabGroup Header="Tools" Visibility="Visible" x:Name="toolsGroup" Background="Green" BorderBrush="Green" />
+            </r:Ribbon.ContextualGroups>
+
+            <!--Quick Access Toolbar Items-->
+            <r:Ribbon.QuickAccessItems>
+                <!--Use Content or Target Property to set QAT item-->
+                
+                <!--You Can Just Bind with Any Control-->
+            </r:Ribbon.QuickAccessItems>
+
+            <!--Backstage Items-->
+            <r:Ribbon.BackstageItems>
+                <r:BackstageTabItem Header="New"/>
+                <r:BackstageTabItem Header="Print"/>
+            </r:Ribbon.BackstageItems>
+        </r:Ribbon>
+        
+        <cp:TabControlView x:Name="contentPanel" />
+        
+    </DockPanel>
+
+</r:RibbonWindow>

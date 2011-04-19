@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EstateCompactModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="EstateCompactModelStoreContainer">
+    <EntitySet Name="Realtors" EntityType="EstateCompactModel.Store.Realtors" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="Realtors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreationTime" Type="datetime" />
+    <Property Name="LastUpdateTime" Type="datetime" />
+    <Property Name="AgencyID" Type="int" Nullable="false" />
+    <Property Name="PermissionID" Type="int" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="FIO" Type="nvarchar" MaxLength="100" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="Commencement" Type="datetime" />
+    <Property Name="ContactPhone" Type="nvarchar" MaxLength="100" />
+    <Property Name="OfficePhone" Type="nvarchar" MaxLength="100" />
+    <Property Name="ICQ" Type="nvarchar" MaxLength="100" />
+    <Property Name="Skype" Type="nvarchar" MaxLength="100" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="100" />
+    <Property Name="Info" Type="ntext" />
+    <Property Name="Remuneration" Type="int" />
+    <Property Name="Appointment" Type="nvarchar" MaxLength="100" />
+    <Property Name="Discharge" Type="datetime" />
+    <Property Name="Photo" Type="image" />
+  </EntityType>
+</Schema>

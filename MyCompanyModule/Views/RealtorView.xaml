@@ -1,0 +1,332 @@
+﻿<UserControl x:Class="MyCompany.RealtorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cc="clr-namespace:CustomControls;assembly=CustomControls"
+             xmlns:focus="clr-namespace:FocusVMLib;assembly=CustomControls"
+             mc:Ignorable="d"             
+             d:DesignHeight="808" d:DesignWidth="821">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid>
+            <Grid.Resources>
+                <DataTemplate
+                    DataType="{x:Type ValidationError}">
+                    <TextBlock
+                        FontStyle="Italic"
+                        Foreground="Red"
+                        HorizontalAlignment="Right"
+                        FontSize="13"
+                        Margin="4"
+                        Text="{Binding Path=ErrorContent}"
+                        />
+                </DataTemplate>
+
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Margin" Value="4" />
+                    <Setter Property="FontSize" Value="13" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+                
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Margin" Value="0,4,0,4" />
+                    <Setter Property="HorizontalAlignment" Value="Left" />
+                    <Setter Property="MinWidth" Value="200" />
+                    <Setter Property="FontSize" Value="15" />
+                    <Setter Property="FontStyle" Value="Italic" />
+                    
+                    <Style.Triggers>
+                        <Trigger Property="Validation.HasError" Value="true">
+                            <Setter Property="ToolTip"
+						    Value="{Binding RelativeSource={RelativeSource Self}, 
+                            Path=(Validation.Errors)[0].ErrorContent}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+                
+                <Style TargetType="{x:Type PasswordBox}">
+                    <Setter Property="Margin" Value="4,4,4,4" />
+                    <Setter Property="HorizontalAlignment" Value="Left" />
+                    <Setter Property="MinWidth" Value="200" />
+                    <Setter Property="FontSize" Value="15" />
+                </Style>
+            </Grid.Resources>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4A6279" Offset="1" />
+                    <GradientStop Color="White" Offset="0" />
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <TabControl Name="tabControl">
+                <TabItem Header="Данные пользователя">
+                    <StackPanel>
+                    <GroupBox Header="Регистрационные данные" Margin="5">
+                        <StackPanel Orientation="Horizontal" Margin="4">
+
+                            <StackPanel.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFECF1F2" Offset="1" />
+                                    <GradientStop Color="White" Offset="0" />
+                                </LinearGradientBrush>
+                            </StackPanel.Background>
+
+                            <Border VerticalAlignment="Top" MinWidth="100" MinHeight="100"  Background="White" BorderBrush="Gray" BorderThickness="1" Margin="4">
+                                <StackPanel Orientation="Vertical">
+
+                                    <Image HorizontalAlignment="Center" Margin="4" Name="photoImage" Source="{Binding Photo, Mode=TwoWay}">
+                                        <Image.Triggers>
+                                            <EventTrigger RoutedEvent="Image.Loaded">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation From="0.5" To="1.0" AutoReverse="True" Duration="0:0:1" RepeatBehavior="Forever"
+                                                             Storyboard.TargetName="photoImage" Storyboard.TargetProperty="Opacity"
+                                                             />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Image.Triggers>
+                                    </Image>
+
+                                    <Label Margin="4" Foreground="blue" FontStyle="Italic" VerticalAlignment="Top" Focusable="True" Cursor="Hand">
+                                        <TextBlock MouseLeftButtonUp="PhotoTB_MouseLeftButtonUp">
+                                    <Underline>
+                                        Загрузить изображение...
+                                    </Underline>
+                                        </TextBlock>
+                                    </Label>
+
+                                </StackPanel>
+                            </Border>
+
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="122*" />
+                                        <ColumnDefinition Width="108*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0">ФИО:</TextBlock>
+                                    <WrapPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+                                        <TextBox Foreground="Blue" 
+                                            x:FieldModifier="private"
+                                            x:Name="FIOTB"
+                                            Text="{focus:FocusBinding Path=FIO, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                    />
+                                        <ContentPresenter Content="{Binding ElementName=FIOTB, Path=(Validation.Errors).CurrentItem}" />
+                                    </WrapPanel>
+
+                                    <TextBlock Grid.Row="1">Должность:</TextBlock>
+                                    <WrapPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                                        <TextBox Foreground="Green" 
+                                            x:FieldModifier="private"
+                                            x:Name="appointmentTB"
+                                            Text="{focus:FocusBinding Path=Appointment, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                                    />
+                                            <ContentPresenter Content="{Binding ElementName=appointmentTB, UpdateSourceTrigger=PropertyChanged, Path=(Validation.Errors).CurrentItem}" />
+                                    </WrapPanel>
+
+                                    <TextBlock Grid.Row="2">День рождения:</TextBlock>
+                                    <DatePicker Grid.Row="2" Grid.Column="1" SelectedDate="{Binding Birthday}"/>
+
+                                    <TextBlock Grid.Row="3">Дата вступления:</TextBlock>
+                                    <DatePicker Grid.Row="3" Grid.Column="1" SelectedDate="{Binding Commencement}"/>
+
+                                    <TextBlock Grid.Row="4">Дата увольнения:</TextBlock>
+                                    <DatePicker Grid.Row="4" Grid.Column="1" SelectedDate="{Binding Discharge}"/>
+
+                                    <TextBlock Grid.Row="5">Дата регистрации:</TextBlock>
+                                    <TextBlock Grid.Row="5" HorizontalAlignment="Right" Foreground="Red" FontStyle="Italic" Grid.Column="1" Text="{Binding CreationTime}"/>
+
+                                    <TextBlock Grid.Row="6">Дата изменения:</TextBlock>
+                                    <TextBlock Grid.Row="6" HorizontalAlignment="Right" Foreground="Red" FontStyle="Italic" Grid.Column="1" Text="{Binding LastUpdateTime}"/>
+
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <GroupBox Header="Учетная запись" Margin="5">
+                        <Grid Margin="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="208*" MinWidth="150" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFECF1F2" Offset="1" />
+                                    <GradientStop Color="White" Offset="0" />
+                                </LinearGradientBrush>
+                            </Grid.Background>
+
+
+                            <!-- LOGIN -->
+
+                            <TextBlock Grid.Row="0">Логин:</TextBlock>
+
+                            <WrapPanel Margin="4" Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+                                <TextBox 
+                                x:FieldModifier="private"
+                                x:Name="loginTB"
+                                Text="{focus:FocusBinding Path=Login, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                            />
+                                <ContentPresenter Content="{Binding ElementName=loginTB, Path=(Validation.Errors).CurrentItem}" />
+                            </WrapPanel>
+
+                            <!-- //LOGIN -->
+
+                            <!-- PASSWORD -->
+
+                            <TextBlock Grid.Row="1">Пароль:</TextBlock>
+
+                            <WrapPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                                <PasswordBox 
+                                Name="password" 
+                                cc:BoundPasswordBox.BindPassword="True" 
+                                cc:BoundPasswordBox.BoundPassword="{focus:FocusBinding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                />
+                                <ContentPresenter Content="{Binding ElementName=password, Path=(Validation.Errors).CurrentItem}" />
+                            </WrapPanel>
+
+                            <TextBlock Grid.Row="2">Повторить пароль:</TextBlock>
+
+                            <WrapPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
+                                <PasswordBox 
+                                Name="passwordConfirmation" 
+                                cc:BoundPasswordBox.BindPassword="True" 
+                                cc:BoundPasswordBox.BoundPassword="{focus:FocusBinding Path=PasswordConfirmation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" 
+                                />
+                                <ContentPresenter Content="{Binding ElementName=passwordConfirmation, Path=(Validation.Errors).CurrentItem}" />
+                            </WrapPanel>
+
+                            <!-- PASSWORD -->
+
+                            <!-- PREVILEGIES -->
+
+                            <TextBlock Grid.Row="3">Привелегии:</TextBlock>
+
+                            <WrapPanel Margin="4" Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
+                                <ComboBox 
+                                x:FieldModifier="private"
+                                x:Name="permissionCB"
+                                SelectedValue="{focus:FocusBinding Path=Permission, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                ItemsSource="{Binding Permissions}"
+                                MinWidth="200" HorizontalAlignment="Left"
+                                
+                            />
+                                <ContentPresenter Content="{Binding ElementName=permissionCB, Path=(Validation.Errors).CurrentItem}" />
+                            </WrapPanel>
+
+                            <!-- //PREVILEGIES -->
+
+                            <CheckBox Margin="4" Grid.Row="4" Grid.Column="1" IsChecked="{Binding Enabled, Mode=TwoWay}">
+                                <TextBlock>Аккаунт включен</TextBlock>
+                            </CheckBox>
+
+                        </Grid>
+                    </GroupBox>
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="Дополнительно">
+                    <StackPanel>
+                        <GroupBox Header="Контактная информация" Margin="5">
+                            <Grid Margin="4">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="208*" MinWidth="150" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFECF1F2" Offset="1" />
+                                        <GradientStop Color="White" Offset="0" />
+                                    </LinearGradientBrush>
+                                </Grid.Background>
+
+                                <TextBlock Grid.Row="0">Телефон:</TextBlock>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ContactPhone, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+
+                                <TextBlock Grid.Row="1">Офисный телефон:</TextBlock>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding OfficePhone, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+
+                                <TextBlock Grid.Row="2">Skype:</TextBlock>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Skype, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+                                <TextBlock Grid.Row="3">ICQ:</TextBlock>
+                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ICQ, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+                                <TextBlock Grid.Row="4">Почта:</TextBlock>
+                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Mail, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+                            </Grid>
+                        </GroupBox>
+
+                        <GroupBox Header="Дополнительная информация" Margin="5">
+                            <DockPanel Margin="4">
+                                <DockPanel.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFECF1F2" Offset="1" />
+                                        <GradientStop Color="White" Offset="0" />
+                                    </LinearGradientBrush>
+                                </DockPanel.Background>
+                                <DockPanel DockPanel.Dock="Top" Background="Cornsilk">
+                                    <TextBlock VerticalAlignment="Center" FontWeight="DemiBold" DockPanel.Dock="Left">Заработная плата:</TextBlock>
+                                    <TextBox cc:TextBoxMaskBehavior.Mask="Integer" DockPanel.Dock="Left" Width="200" Text="{Binding Remuneration, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                                    <TextBlock VerticalAlignment="Center" DockPanel.Dock="Right">руб.</TextBlock>
+                                </DockPanel>
+                                <TextBlock DockPanel.Dock="Top">Дополнительно:</TextBlock>
+                                <TextBox Margin="4" Height="100" MaxWidth="600" VerticalScrollBarVisibility="Visible" DockPanel.Dock="Bottom" Foreground="DarkSlateGray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="16" TextWrapping="WrapWithOverflow" AcceptsReturn="True"  Text="{Binding Info, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                            </DockPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </TabItem>
+
+            </TabControl>
+
+            <StackPanel Margin="5" Grid.Row="1" Grid.Column="0" DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="saveButton"  Command="{Binding SaveChangesCommand}" Height="30" Click="saveButton_Click">Сохранить изменения</Button>
+                <Button Name="cancelButton" Command="{Binding CancelChangesCommand}" Margin="5,0,0,0" >Отменить изменения</Button>
+            </StackPanel>
+
+        </Grid>
+    </ScrollViewer>
+</UserControl>

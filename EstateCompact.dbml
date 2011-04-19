@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="EstateCompact" EntityNamespace="EstateDataAccess" ContextNamespace="EstateDataAccess" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="Agencies">
+    <Type Name="Agency">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CreationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Enabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Skype" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ICQ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="MapUrl" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="SiteUrl" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Logo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Passage" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="About" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Foundation" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mail" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="RealtorsToAgencies" Member="Realtors" ThisKey="ID" OtherKey="AgencyID" Type="Realtor" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="Balconies">
+    <Type Name="Balcony">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Boroughs">
+    <Type Name="Borough">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="BoroughToCity" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" />
+      <Association Name="MicrodistrictToBorough" Member="Microdistricts" ThisKey="ID" OtherKey="BoroughID" Type="Microdistrict" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="Buildings">
+    <Type Name="Building">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Num" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="StreetID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BoroughID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StoreysNum" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NewlyBuilt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BuildingSeriesID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WallMaterialID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CeilingID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParkingID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GasSupplyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HeatingSupplyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WaterSupplyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConditionerSupplyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DrainageSupplyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ElectricitySupply" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TelephoneSupply" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InternetSupply" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TVSupply" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="BuildingSeries">
+    <Type Name="BuildingSery">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Ceilings">
+    <Type Name="Ceiling">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Cities">
+    <Type Name="City">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DistrictID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="BoroughToCity" Member="Boroughs" ThisKey="ID" OtherKey="CityID" Type="Borough" DeleteRule="NO ACTION" />
+      <Association Name="CityToDistrict" Member="District" ThisKey="DistrictID" OtherKey="ID" Type="District" IsForeignKey="true" DeleteOnNull="true" />
+      <Association Name="StreetToCity" Member="Streets" ThisKey="ID" OtherKey="CityID" Type="Street" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="ConditionerSupplies">
+    <Type Name="ConditionerSupply">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Countries">
+    <Type Name="Country">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="RegionToCountry" Member="Regions" ThisKey="ID" OtherKey="CountryID" Type="Region" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="Currencies">
+    <Type Name="Currency">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Districts">
+    <Type Name="District">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RegionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CityToDistrict" Member="Cities" ThisKey="ID" OtherKey="DistrictID" Type="City" DeleteRule="CASCADE" />
+      <Association Name="DistrictToRegion" Member="Region" ThisKey="RegionID" OtherKey="ID" Type="Region" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="DrainageSupplies">
+    <Type Name="DrainageSupply">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="GasSupplies">
+    <Type Name="GasSupply">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="HeatingSupplies">
+    <Type Name="HeatingSupply">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Microdistricts">
+    <Type Name="Microdistrict">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BoroughID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MicrodistrictToBorough" Member="Borough" ThisKey="BoroughID" OtherKey="ID" Type="Borough" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Parkings">
+    <Type Name="Parking">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Permissions">
+    <Type Name="Permission">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Realtors">
+    <Type Name="Realtor">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CreationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AgencyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PermissionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Enabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FIO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Commencement" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ContactPhone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="OfficePhone" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ICQ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Skype" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Mail" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Info" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Remuneration" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Appointment" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Discharge" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="RealtorsToAgencies" Member="Agency" ThisKey="AgencyID" OtherKey="ID" Type="Agency" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Regions">
+    <Type Name="Region">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CountryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="DistrictToRegion" Member="Districts" ThisKey="ID" OtherKey="RegionID" Type="District" DeleteRule="CASCADE" />
+      <Association Name="RegionToCountry" Member="Country" ThisKey="CountryID" OtherKey="ID" Type="Country" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Renovations">
+    <Type Name="Renovation">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Streets">
+    <Type Name="Street">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="StreetToCity" Member="City" ThisKey="CityID" OtherKey="ID" Type="City" IsForeignKey="true" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="WallMaterials">
+    <Type Name="WallMaterial">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="WaterSupplies">
+    <Type Name="WaterSupply">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

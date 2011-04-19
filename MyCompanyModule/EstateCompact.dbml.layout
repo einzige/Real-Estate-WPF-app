@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.75, 15.25" name="EstateCompact">
+  <DataContextMoniker Name="/EstateCompact" />
+  <nestedChildShapes>
+    <classShape Id="29a999e7-6e2f-4dc6-a5df-3ad4e90672e6" absoluteBounds="1, 5.25, 2, 3.8862125651041657">
+      <DataClassMoniker Name="/EstateCompact/Agency" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2fe4ff97-496e-4b5d-8163-4b26b65f0c13" absoluteBounds="1.0150000000000001, 5.71, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59cd28c7-78bd-42cc-96dc-27e5266122fc" absoluteBounds="6.75, 4.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/EstateCompact/Balcony" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c72896a0-416c-478d-9611-1527ca3361da" absoluteBounds="6.765, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1108e69e-4b73-4108-b0b4-17889adb6abe" absoluteBounds="11.75, 1, 2, 1.3862939453125">
+      <DataClassMoniker Name="/EstateCompact/Borough" />
+      <nestedChildShapes>
+        <elementListCompartment Id="024204a3-9794-4a7b-8ab3-ea944998f708" absoluteBounds="11.765, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d479136d-59f8-4f81-9562-5371fa808841" absoluteBounds="6.75, 6.75, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/EstateCompact/Building" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7573ce47-e691-4c5d-a730-c20891c7adf5" absoluteBounds="6.765, 7.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af10cb43-a832-44b7-a8f8-c880881d6d44" absoluteBounds="9.75, 5.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/EstateCompact/BuildingSery" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f16cefd-6864-4d24-8f53-97efe9d5036c" absoluteBounds="9.765, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="135f5862-653c-4b62-a025-855e83f865a9" absoluteBounds="9.75, 7.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/EstateCompact/Ceiling" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe01dcd5-0224-4b34-a0f9-9c42f9639605" absoluteBounds="9.765, 8.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7782d578-2d9a-4d86-9f71-51cf2f1d42cc" absoluteBounds="9, 2.125, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/EstateCompact/City" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97651731-289a-4af1-a306-cb3fc2a14519" absoluteBounds="9.015, 2.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e42de093-b9e7-4775-8770-c4b13878e3a6" absoluteBounds="9.75, 9.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/EstateCompact/ConditionerSupply" />
+      <nestedChildShapes>
+        <elementListCompartment Id="afff0688-17b2-4194-b04e-180d5435abac" absoluteBounds="9.765, 10.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c22c0d0f-3d89-42d1-960b-fe65e92e0692" absoluteBounds="0.75, 2.125, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/EstateCompact/Country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ba5f08e-59b1-420a-b750-03e2a64f0943" absoluteBounds="0.765, 2.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1c661ea-1a2c-4296-b10e-50731712bde0" absoluteBounds="0.75, 10.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/EstateCompact/Currency" />
+      <nestedChildShapes>
+        <elementListCompartment Id="04ce3f04-7bcf-44b0-b7b3-5cd0ff645aa8" absoluteBounds="0.765, 11.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="966cc016-21ad-4065-8503-80f402894a13" absoluteBounds="6.25, 2.125, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/EstateCompact/District" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c377373-02ea-49fa-b2ba-51a4a72b48f3" absoluteBounds="6.265, 2.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="14e9641c-8191-4dc2-ac03-22f8d5a16304" absoluteBounds="9.75, 11.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/EstateCompact/DrainageSupply" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca4d3758-ae80-4a1e-a474-2914680432a8" absoluteBounds="9.765, 12.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="90829b90-b136-4a01-8ade-81cfbb8f68a9" absoluteBounds="3.75, 12.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/EstateCompact/GasSupply" />
+      <nestedChildShapes>
+        <elementListCompartment Id="35fe7b32-b072-4f4a-8772-ea38c49eac53" absoluteBounds="3.765, 13.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b267da9-a625-4b5a-a4bc-984bcf5fbeed" absoluteBounds="12.75, 5.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/EstateCompact/HeatingSupply" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b121e287-4063-497e-bc44-8f1fbedeeec1" absoluteBounds="12.765, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c9b67963-24ae-42da-9283-efff32c8c4e5" absoluteBounds="14.5, 1, 2, 1.3862939453125">
+      <DataClassMoniker Name="/EstateCompact/Microdistrict" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff7e40cc-f1ce-42d1-b85a-7b1fce8eecf1" absoluteBounds="14.515, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="95b0574f-5c5c-4830-8ae1-2edfdd562259" absoluteBounds="12.75, 7.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/EstateCompact/Parking" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d1218c6-68f3-4e2a-9b7f-61601a69d6d9" absoluteBounds="12.765, 8.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2300a720-bbb7-4b64-8bed-7aaf7559b07d" absoluteBounds="12.75, 9.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/EstateCompact/Permission" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a6e4658-bcc5-4a21-8c42-dbc86f7414bd" absoluteBounds="12.765, 10.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2a07584f-a12e-4a89-a6a7-9aa8d40ab687" absoluteBounds="3.5, 5.125, 2, 4.8477197265624987">
+      <DataClassMoniker Name="/EstateCompact/Realtor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a2e44ef9-ead1-4133-ae2c-6cce0c451285" absoluteBounds="3.515, 5.585, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb8f21c3-dd41-4e8d-a7f5-eccb448de9ec" absoluteBounds="3.5, 2.125, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/EstateCompact/Region" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93a7a77c-6d67-4a9e-944e-f968c597891f" absoluteBounds="3.515, 2.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d574c5a2-0c0f-4613-b85a-9a4ddd5ef2f5" absoluteBounds="12.75, 11.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/EstateCompact/Renovation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1d945f9-f721-4a06-91c2-d4e8aa901a6c" absoluteBounds="12.765, 12.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="20164dad-1803-4301-b1f6-fba196bce1d6" absoluteBounds="11.75, 3.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/EstateCompact/Street" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49ef59b3-8343-41c5-84bd-c5ada6e05637" absoluteBounds="11.765, 3.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="46225ccf-47ea-485e-b9dc-f9aff667a5b6" absoluteBounds="6.75, 13.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/EstateCompact/WallMaterial" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e779e2d-292c-4455-ab24-3042e163ea60" absoluteBounds="6.765, 14.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="75d27cf3-960d-44f0-a2d2-4ecf8af1ae2a" absoluteBounds="9.75, 13.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/EstateCompact/WaterSupply" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3e2b07db-8267-46c6-9e5b-5a1ac3fb6806" absoluteBounds="9.765, 14.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10 : 2.125); (10 : 1.5624995); (11.75 : 1.5624995)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EstateCompact/City/City_Borough" />
+      <nodes>
+        <classShapeMoniker Id="7782d578-2d9a-4d86-9f71-51cf2f1d42cc" />
+        <classShapeMoniker Id="1108e69e-4b73-4108-b0b4-17889adb6abe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 2.81814697265625); (9 : 2.81814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EstateCompact/District/District_City" />
+      <nodes>
+        <classShapeMoniker Id="966cc016-21ad-4065-8503-80f402894a13" />
+        <classShapeMoniker Id="7782d578-2d9a-4d86-9f71-51cf2f1d42cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.81814697265625); (6.25 : 2.81814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EstateCompact/Region/Region_District" />
+      <nodes>
+        <classShapeMoniker Id="cb8f21c3-dd41-4e8d-a7f5-eccb448de9ec" />
+        <classShapeMoniker Id="966cc016-21ad-4065-8503-80f402894a13" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 1.69314697265625); (14.5 : 1.69314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EstateCompact/Borough/Borough_Microdistrict" />
+      <nodes>
+        <classShapeMoniker Id="1108e69e-4b73-4108-b0b4-17889adb6abe" />
+        <classShapeMoniker Id="c9b67963-24ae-42da-9283-efff32c8c4e5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 7.18930942483385); (3.5 : 7.18930942483385)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EstateCompact/Agency/Agency_Realtor" />
+      <nodes>
+        <classShapeMoniker Id="29a999e7-6e2f-4dc6-a5df-3ad4e90672e6" />
+        <classShapeMoniker Id="2a07584f-a12e-4a89-a6a7-9aa8d40ab687" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.72199625651042); (3.5 : 2.72199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EstateCompact/Country/Country_Region" />
+      <nodes>
+        <classShapeMoniker Id="c22c0d0f-3d89-42d1-960b-fe65e92e0692" />
+        <classShapeMoniker Id="cb8f21c3-dd41-4e8d-a7f5-eccb448de9ec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 3.31814697265625); (11.75 : 3.31814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EstateCompact/City/City_Street" />
+      <nodes>
+        <classShapeMoniker Id="7782d578-2d9a-4d86-9f71-51cf2f1d42cc" />
+        <classShapeMoniker Id="20164dad-1803-4301-b1f6-fba196bce1d6" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

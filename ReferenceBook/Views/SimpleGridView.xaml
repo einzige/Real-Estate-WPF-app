@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="ReferenceBook.SimpleGridView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ReferenceBook"
+             mc:Ignorable="d" 
+             xmlns:cal="http://www.codeplex.com/CompositeWPF"
+             d:DesignHeight="300" d:DesignWidth="700" ToolTip="Справочники">
+    
+    <DockPanel>
+        
+        <DockPanel.Resources>
+            <ResourceDictionary Source="DataGridStyle.xaml"/>
+        </DockPanel.Resources>
+
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            
+            <TextBlock Foreground="White" VerticalAlignment="Center" Margin="4" FontSize="16" Text="{Binding RusTableName, UpdateSourceTrigger=PropertyChanged}" />
+            
+            <TextBox Name="tb" Margin="4" MinWidth="200" FontSize="16" Text="{Binding Path=NewRecordName, Mode=TwoWay}" />
+            
+            <Button Name="addNewRecordButton" Margin="4" MinWidth="150" FontSize="14" 
+                    Command="{Binding Path=AddNewRecordCommand}"
+                    Content="Добавить запись" />
+            
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FF649999" Offset="0" />
+                    <GradientStop Color="White" Offset="1" />
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            
+        </StackPanel>
+
+        <DataGrid Name="dg" 
+                  RowStyle="{StaticResource RowStyle}"
+                  CanUserAddRows="True"
+                  CanUserResizeColumns="False"
+                  ItemsSource="{Binding Entities}" 
+                  AutoGenerateColumns="False" 
+                  FontSize="14" 
+                  GridLinesVisibility="Horizontal"
+                  HorizontalGridLinesBrush="LightGray"
+                  HeadersVisibility="Column" 
+                  MinHeight="100" 
+                  MinColumnWidth="200"
+                  MinRowHeight="30"
+                  BorderBrush="LightGray"
+                  FontWeight="DemiBold"
+                  Foreground="Coral">
+
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE1EAEA" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="dgh"
+                                    Foreground="Black" 
+                                    FontWeight="Normal" 
+                                    Header="Наименование" 
+                                    Binding="{Binding Path=Name, ValidatesOnDataErrors=True}"
+                                    EditingElementStyle="{StaticResource CellEditStyle}"
+                                    FontSize="20"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

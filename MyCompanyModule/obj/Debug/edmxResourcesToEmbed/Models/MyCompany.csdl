@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyCompanyModule" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="EstateCompactEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Agencies" EntityType="MyCompanyModule.Agencies" />
+    <EntitySet Name="Realtors" EntityType="MyCompanyModule.Realtors" />
+    <AssociationSet Name="RealtorsAgencies" Association="MyCompanyModule.RealtorsAgencies">
+      <End Role="Realtors" EntitySet="Realtors" />
+      <End Role="Agencies" EntitySet="Agencies" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Agencies">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreationTime" Type="DateTime" />
+    <Property Name="LastUpdateTime" Type="DateTime" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Skype" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ICQ" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="MapUrl" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+    <Property Name="SiteUrl" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Passage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="About" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Foundation" Type="DateTime" />
+    <NavigationProperty Name="Realtors" Relationship="MyCompanyModule.RealtorsAgencies" FromRole="Agencies" ToRole="Realtors" />
+  </EntityType>
+  <EntityType Name="Realtors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreationTime" Type="DateTime" />
+    <Property Name="LastUpdateTime" Type="DateTime" />
+    <Property Name="AgencyID" Type="Int32" Nullable="false" />
+    <Property Name="PermissionID" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="FIO" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Birthday" Type="DateTime" />
+    <Property Name="Commencement" Type="DateTime" />
+    <Property Name="ContactPhone" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="OfficePhone" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ICQ" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Skype" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Mail" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Info" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Remuneration" Type="Int32" />
+    <Property Name="Appointment" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Agencies" Relationship="MyCompanyModule.RealtorsAgencies" FromRole="Realtors" ToRole="Agencies" />
+  </EntityType>
+  <Association Name="RealtorsAgencies">
+    <End Type="MyCompanyModule.Realtors" Role="Realtors" Multiplicity="*" />
+    <End Type="MyCompanyModule.Agencies" Role="Agencies" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Agencies">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Realtors">
+        <PropertyRef Name="AgencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

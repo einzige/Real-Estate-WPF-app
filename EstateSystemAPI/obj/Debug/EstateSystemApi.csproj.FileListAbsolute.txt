@@ -1,0 +1,8 @@
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\MainWindow\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\MainWindow\obj\Debug\EstateSystemApi.dll
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\MainWindow\obj\Debug\EstateSystemApi.pdb
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\EstateSystem\bin\EstateSystemApi.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\EstateSystem\bin\EstateSystemApi.pdb
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\EstateSystemAPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\EstateSystemAPI\obj\Debug\EstateSystemApi.dll
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\EstateSystemAPI\obj\Debug\EstateSystemApi.pdb

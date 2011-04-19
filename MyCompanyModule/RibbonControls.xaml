@@ -1,0 +1,29 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:r="clr-namespace:Fluent;assembly=Fluent"
+    xmlns:my="clr-namespace:MyCompany"
+    xmlns:local="clr-namespace:MyCompany"
+    >
+
+    <ResourceDictionary x:Key="Tabs">
+        <r:RibbonTabItem x:Key="Tab0" Header="Моя компания">
+
+            <r:RibbonGroupBox Header="Сотрудники">
+
+                <r:Button Text="Таблица сотрудников" Command="local:MyCompanyCommands.ShowRealtorsTableCommand" Icon="images/archive-32.png" LargeIcon="images/archive-48.png"/>
+                <r:Button Text="Добавить нового сотрудника" Command="local:MyCompanyCommands.ShowRealtorViewCommand" Icon="images/archive-32.png" LargeIcon="images/archive-48.png"/>
+
+            </r:RibbonGroupBox>
+
+            <r:RibbonGroupBox Header="Агенство недвижимости">
+
+                <r:Button Text="Изменить информацию об агенстве" Command="local:MyCompanyCommands.ShowMyAgencyViewCommand" Icon="images/archive-32.png" LargeIcon="images/archive-48.png"/>
+                <r:Button Text="Статистика работы" Icon="images/archive-32.png" LargeIcon="images/archive-48.png"/>
+
+            </r:RibbonGroupBox>
+
+        </r:RibbonTabItem>
+    </ResourceDictionary>
+
+</ResourceDictionary>

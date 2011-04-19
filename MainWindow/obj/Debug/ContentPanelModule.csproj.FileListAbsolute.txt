@@ -1,0 +1,9 @@
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\Views\TabControlView.baml
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\Views\TabControlView.g.cs
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\ContentPanelModule_MarkupCompile.cache
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\ContentPanelModule.g.resources
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\EstateSystem\bin\modules\ContentPanelModule.dll
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\EstateSystem\bin\modules\ContentPanelModule.pdb
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\ContentPanelModule.dll
+C:\Users\szinin\Documents\Visual Studio 2010\Projects\EstateSystem\ContentPanelModule\obj\Debug\ContentPanelModule.pdb

@@ -1,0 +1,5 @@
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\CustomControls\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\EstateSystem\bin\CustomControls.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\EstateSystem\bin\CustomControls.pdb
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\CustomControls\obj\Debug\CustomControls.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\CustomControls\obj\Debug\CustomControls.pdb

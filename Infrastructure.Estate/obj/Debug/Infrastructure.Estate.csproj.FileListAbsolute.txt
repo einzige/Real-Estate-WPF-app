@@ -1,0 +1,11 @@
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Infrastructure.Estate\bin\Debug\Infrastructure.Estate.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Infrastructure.Estate\bin\Debug\Infrastructure.Estate.pdb
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Infrastructure.Estate\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Infrastructure.Estate\obj\Debug\Infrastructure.Estate.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Infrastructure.Estate\obj\Debug\Infrastructure.Estate.pdb
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Infrastructure.Estate\bin\Debug\Microsoft.Practices.Composite.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Infrastructure.Estate\bin\Debug\Microsoft.Practices.Composite.Presentation.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Infrastructure.Estate\bin\Debug\Microsoft.Practices.Composite.UnityExtensions.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Infrastructure.Estate\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Infrastructure.Estate\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\szinin\documents\visual studio 2010\Projects\EstateSystem\Infrastructure.Estate\bin\Debug\Microsoft.Practices.Unity.dll

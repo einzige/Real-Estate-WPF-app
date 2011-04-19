@@ -1,0 +1,277 @@
+﻿<UserControl x:Class="ReferenceBook.RegionsEditorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ReferenceBook"
+             mc:Ignorable="d" 
+             d:DesignHeight="435" d:DesignWidth="672"
+             >
+    
+    <DockPanel>
+
+        <DockPanel.CommandBindings>
+            <CommandBinding Command="New" Executed="CommandBinding_Executed"/>
+        </DockPanel.CommandBindings>
+        
+        <DockPanel.Resources>
+            
+            <ContextMenu x:Key="CategoryMenu">
+                <MenuItem Header="Добавить запись в этот раздел" Command="New">
+                    <MenuItem.Icon>
+                        <Image Source="Images\Add.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+
+                <MenuItem Header="Удалить раздел" Command="Delete">
+                    <MenuItem.Icon>
+                        <Image Source="Images\Remove.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </ContextMenu>
+
+            <ContextMenu x:Key="DeleteMenu">
+                <MenuItem Header="Удалить запись" Command="Delete">
+                    <MenuItem.Icon>
+                        <Image Source="Images\Remove.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </ContextMenu>
+
+        </DockPanel.Resources>
+        
+      <TextBlock DockPanel.Dock="Bottom" TextWrapping="Wrap" FontSize="12">
+            Добавить записи можно по правому клику на элементе. Будте осторожны с удалением.
+            Если вы удалите связанную по ссылку запись из дерева, то неизбежно возникнут ошибки базы данных.
+      </TextBlock>
+
+        <Popup x:Name="adderPopup" Placement="MousePoint" Height="90"  
+               StaysOpen="False" IsOpen="{Binding IsAddingItem, Mode=TwoWay}" PopupAnimation="Slide" AllowsTransparency="True" Opened="adderPopup_Opened">
+            
+            <Grid>
+                
+                <Border Margin="10,10,20,20" BorderBrush="LightSlateGray" BorderThickness="2" Background="{StaticResource grayGradient}">
+                    <Border.BitmapEffect>
+                        <DropShadowBitmapEffect Softness=".24" ShadowDepth="2" Color="Black"/>
+                    </Border.BitmapEffect>
+                </Border>
+                
+                <StackPanel Orientation="Horizontal" Margin="25" VerticalAlignment="Center">
+                    <Label FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,4,0" FontSize="12">Введите имя НОВОГО СУБЭЛЕМЕНТА:</Label>
+                    <TextBox Name="newRegionTextBox" VerticalAlignment="Center" FontSize="14"  Width="140" Height="30"/>
+                    <Button Click="CloseAdderPopup" VerticalAlignment="Center" Width="120" Height="30" Margin="5,0,0,0" Command="{Binding AddCommand}" CommandParameter="{Binding ElementName=newRegionTextBox, Path=Text}">Добавить</Button>
+                </StackPanel>
+                
+            </Grid>
+            
+        </Popup>
+
+        <Popup x:Name="editorPopup" Placement="MousePoint" Height="90"  
+               StaysOpen="False" IsOpen="{Binding IsEditingItem, Mode=TwoWay}" PopupAnimation="Slide" AllowsTransparency="True" Opened="editorPopup_Opened">
+
+            <Grid>
+
+                <Border Margin="10,10,20,20" BorderBrush="LightSlateGray" BorderThickness="2" Background="{StaticResource ExpanderArrowHoverFill1}">
+                    <Border.BitmapEffect>
+                        <DropShadowBitmapEffect Softness=".24" ShadowDepth="2" Color="Black"/>
+                    </Border.BitmapEffect>
+                </Border>
+
+                <StackPanel Orientation="Horizontal" Margin="25" VerticalAlignment="Center">
+                    <Label FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,4,0" FontSize="12">Введите НОВОЕ ИМЯ текущего элемента:</Label>
+                    <TextBox  Name="newNameTextBox" VerticalAlignment="Center" FontSize="14"  Width="140" Height="30"/>
+                    <Button Click="CloseEditorPopup" VerticalAlignment="Center" Width="120" Height="30" Margin="5,0,0,0" Command="{Binding EditCommand}" CommandParameter="{Binding ElementName=newNameTextBox, Path=Text}">Переименовать</Button>
+                </StackPanel>
+
+            </Grid>
+
+        </Popup>
+
+        <TreeView Name="tree" FontSize="15" ItemsSource="{Binding CountryGroups}">
+            
+            <TreeView.ItemContainerStyle>
+                <!--  This Style binds a TreeViewItem to a TreeViewItemViewModel.-->
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <EventSetter
+                            Event="TreeViewItem.MouseRightButtonDown"
+                            Handler="TreeViewItem_MouseRightButtonDown"/>
+                    <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                    <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                    <Setter Property="FontWeight" Value="Normal" />
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="FontWeight" Value="Bold" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TreeView.ItemContainerStyle>
+
+            <TreeView.Resources>
+
+                <HierarchicalDataTemplate 
+                    DataType="{x:Type local:CountryGroupViewModel}" 
+                    ItemsSource="{Binding Children}">
+
+                    <StackPanel Orientation="Horizontal" ContextMenu="{StaticResource CategoryMenu}">
+                        <TextBlock Foreground="Red" Text="{Binding Name}" />
+                        <Button ToolTipService.ToolTip="Добавить страну" Margin="2,0,0,0" Command="local:DatabaseDirectoryCommands.InitAddingItem" 
+                                                                                          CommandParameter="{Binding}">
+                            <Image Source="Images/add.png" Stretch="None" />
+                        </Button>
+                    </StackPanel>
+
+                </HierarchicalDataTemplate>
+
+                <HierarchicalDataTemplate 
+                    DataType="{x:Type local:CountryViewModel}" 
+                    ItemsSource="{Binding Children}">
+
+                    <StackPanel Orientation="Horizontal" ContextMenu="{StaticResource CategoryMenu}">
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images\Region.png" />
+                        <TextBlock Text="{Binding Name}" />
+                        <Button ToolTipService.ToolTip="Добавить регион" Margin="2,0,0,0" Command="local:DatabaseDirectoryCommands.InitAddingItem" 
+                                                                                          CommandParameter="{Binding}">
+                            <Image Source="Images/add.png" Stretch="None" />
+                        </Button>
+                        <Button ToolTipService.ToolTip="Изменить имя региона" Margin="2,0,0,0" 
+                                                                                         Command="local:DatabaseDirectoryCommands.InitEditingItem" 
+                                                                                         CommandParameter="{Binding}">
+                            <Image Source="Images/edit.png" Stretch="None" />
+                        </Button>
+                    </StackPanel>
+
+                </HierarchicalDataTemplate>
+
+                <HierarchicalDataTemplate 
+                    DataType="{x:Type local:RegionViewModel}" 
+                    ItemsSource="{Binding Children}"
+                    >
+
+                    <StackPanel Orientation="Horizontal" ContextMenu="{StaticResource CategoryMenu}">
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images\Region.png" />
+                        <TextBlock Text="{Binding Name}" />
+                        <Button ToolTipService.ToolTip="Добавить административный район" Margin="2,0,0,0" 
+                                                                                         Command="local:DatabaseDirectoryCommands.InitAddingItem" 
+                                                                                         CommandParameter="{Binding}">
+                            <Image Source="Images/add.png" Stretch="None" />
+                        </Button>
+                        <Button ToolTipService.ToolTip="Изменить имя региона" Margin="2,0,0,0" 
+                                                                                         Command="local:DatabaseDirectoryCommands.InitEditingItem" 
+                                                                                         CommandParameter="{Binding}">
+                            <Image Source="Images/edit.png" Stretch="None" />
+                        </Button>
+
+                    </StackPanel>
+                    
+                </HierarchicalDataTemplate>
+
+                <HierarchicalDataTemplate 
+                    DataType="{x:Type local:DistrictViewModel}" 
+                    ItemsSource="{Binding Children}">
+
+                    <StackPanel Orientation="Horizontal" ContextMenu="{StaticResource CategoryMenu}">
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images\State.png" />
+                        <TextBlock Text="{Binding Name}" />
+                        <Button ToolTipService.ToolTip="Добавить город" Margin="2,0,0,0" Command="local:DatabaseDirectoryCommands.InitAddingItem" 
+                                                                                         CommandParameter="{Binding}">
+                            <Image Source="Images/add.png" Stretch="None" />
+                        </Button>
+                        <Button ToolTipService.ToolTip="Изменить имя региона" Margin="2,0,0,0" 
+                                                                                         Command="local:DatabaseDirectoryCommands.InitEditingItem" 
+                                                                                         CommandParameter="{Binding}">
+                            <Image Source="Images/edit.png" Stretch="None" />
+                        </Button>
+                    </StackPanel>
+                    
+                </HierarchicalDataTemplate>
+
+                <HierarchicalDataTemplate 
+                    DataType="{x:Type local:CityViewModel}" 
+                    ItemsSource="{Binding Children}"
+                    >
+    
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images\City.png" />
+                        <TextBlock Text="{Binding Name}" />
+                        <Button ToolTipService.ToolTip="Изменить имя региона" Margin="2,0,0,0" 
+                                                                                         Command="local:DatabaseDirectoryCommands.InitEditingItem" 
+                                                                                         CommandParameter="{Binding}">
+                            <Image Source="Images/edit.png" Stretch="None" />
+                        </Button>
+                    </StackPanel>
+
+                </HierarchicalDataTemplate>
+
+                <HierarchicalDataTemplate 
+                    DataType="{x:Type local:CityGroupViewModel}" 
+                    ItemsSource="{Binding Children}"
+                    >
+
+                    <StackPanel Orientation="Horizontal" ContextMenu="{StaticResource CategoryMenu}">
+                        <TextBlock Foreground="Red" Text="{Binding Name}" />
+                        <Button ToolTipService.ToolTip="Добавить запись" Margin="2,0,0,0" Command="local:DatabaseDirectoryCommands.InitAddingItem" 
+                                                                                          CommandParameter="{Binding}">
+                            <Image Source="Images/add.png" Stretch="None" />
+                        </Button>
+                    </StackPanel>
+
+                </HierarchicalDataTemplate>
+
+                <DataTemplate
+                    DataType="{x:Type local:StreetViewModel}"
+                    >
+
+                    <StackPanel Orientation="Horizontal" ContextMenu="{StaticResource DeleteMenu}">
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images\City.png" />
+                        <TextBlock FontStyle="Italic" Text="{Binding Name}" />
+                        <Button ToolTipService.ToolTip="Изменить имя региона" Margin="2,0,0,0" 
+                                                                                         Command="local:DatabaseDirectoryCommands.InitEditingItem" 
+                                                                                         CommandParameter="{Binding}">
+                            <Image Source="Images/edit.png" Stretch="None" />
+                        </Button>
+                    </StackPanel>
+
+                </DataTemplate>
+
+                <HierarchicalDataTemplate 
+                    DataType="{x:Type local:BoroughViewModel}"
+                    ItemsSource="{Binding Children}"
+                    >
+
+                    <StackPanel Orientation="Horizontal" ContextMenu="{StaticResource CategoryMenu}">
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images\City.png" />
+                        <TextBlock Text="{Binding Name}" />
+
+                        <Button ToolTipService.ToolTip="Добавить микрорайон" Margin="2,0,0,0" Command="local:DatabaseDirectoryCommands.InitAddingItem" 
+                                                                                              CommandParameter="{Binding}">
+                            <Image Source="Images/add.png" Stretch="None" />
+                        </Button>
+                        <Button ToolTipService.ToolTip="Изменить имя региона" Margin="2,0,0,0" 
+                                                                                         Command="local:DatabaseDirectoryCommands.InitEditingItem" 
+                                                                                         CommandParameter="{Binding}">
+                            <Image Source="Images/edit.png" Stretch="None" />
+                        </Button>
+                    </StackPanel>
+
+                </HierarchicalDataTemplate>
+
+                <DataTemplate
+                    DataType="{x:Type local:MicrodistrictViewModel}"
+                    >
+
+                    <StackPanel Orientation="Horizontal" ContextMenu="{StaticResource DeleteMenu}">
+                        <Image Width="16" Height="16" Margin="3,0" Source="Images\City.png" />
+                        <TextBlock FontStyle="Italic" Text="{Binding Name}" />
+                        <Button ToolTipService.ToolTip="Изменить имя региона" Margin="2,0,0,0" 
+                                                                                         Command="local:DatabaseDirectoryCommands.InitEditingItem" 
+                                                                                         CommandParameter="{Binding}">
+                            <Image Source="Images/edit.png" Stretch="None" />
+                        </Button>
+                    </StackPanel>
+
+                </DataTemplate>
+
+            </TreeView.Resources>
+        </TreeView>
+    </DockPanel>
+</UserControl>
